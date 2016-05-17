@@ -24,6 +24,6 @@ WORKDIR $APP_HOME
 # Run CLIs from /app/node_modules/.bin
 ENV PATH $PATH:/app/node_modules/.bin
 
-EXPOSE 3000
+EXPOSE 3000 3500
 
 CMD ["npm", "start"]
