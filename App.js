@@ -1,9 +1,11 @@
 import React from 'react';
 
-class App extends React.Component {
-  render() {
-    return <h1>Hi</h1>
-  }
-}
+const App = ({ value, onIncrement, onDecrement }) => (
+  <div>
+    <h1>{value}</h1>
+    <button onClick={onIncrement}>+</button>
+    <button onClick={onDecrement}>-</button>
+  </div>
+);
 
 export default App
