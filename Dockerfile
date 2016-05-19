@@ -17,8 +17,12 @@ RUN update-locale LANG=en_US.UTF-8
 # Configure the main working directory. This is the base
 # directory used in any further RUN, COPY, and ENTRYPOINT
 # commands.
-ENV APP_HOME /app
-RUN mkdir -p $APP_HOME
+ENV APP_USER app
+ENV APP_HOME /$APP_USER
+RUN mkdir -p $APP_HOME && \
+    useradd -m -s /usr/sbin/nologin $APP_USER && \
+    chown -R $APP_USER:$APP_USER $APP_HOME
+USER $APP_USER
 WORKDIR $APP_HOME
 
 # Run CLIs from /app/node_modules/.bin
