@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 
-import App from './App';
+import App from './components/App';
 
 const counter = (state = 0, action) => {
   switch (action.type) {
@@ -15,7 +15,9 @@ const counter = (state = 0, action) => {
   }
 }
 
-const store = createStore(counter);
+const store = createStore(counter, 0,
+  window.devToolsExtension ? window.devToolsExtension() : undefined
+);
 
 const render = () => {
   ReactDOM.render(
