@@ -1,11 +1,19 @@
-import React from 'react';
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import * as actionCreators from '../actions/actionCreators'
+import Main from './Main'
 
-const App = ({ value, onIncrement, onDecrement }) => (
-  <div>
-    <h1>{value}</h1>
-    <button onClick={onIncrement}>+</button>
-    <button onClick={onDecrement}>-</button>
-  </div>
-);
+const mapStateToProps = (state) => {
+  return {
+    users: state.users,
+    activities: state.activities
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(actionCreators, dispatch)
+}
+
+const App = connect(mapStateToProps, mapDispatchToProps)(Main)
 
 export default App

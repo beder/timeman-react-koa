@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './client/main.js',
+  entry: './client/client.js',
   output: {
     path: './',
     filename: 'index.js'
@@ -7,7 +7,8 @@ module.exports = {
   devServer: {
     inline: true,
     host: '0.0.0.0',
-    port: 3500
+    port: 3500,
+    historyApiFallback: true
   },
   module: {
     loaders: [
