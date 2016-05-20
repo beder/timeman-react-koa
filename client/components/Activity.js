@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 export default class Activity extends React.Component {
   render() {
-    const { activity, i, onDelete } = this.props
+    const { activity, i, onDelete, user } = this.props
 
     return (
       <div>
@@ -12,7 +12,12 @@ export default class Activity extends React.Component {
             {activity.name}
           </Link>
         </h3>
-        <button onClick={onDelete()}>Delete</button>
+        <div>
+          <Link to={`/users/${user.id}`}>{user.name}</Link>
+        </div>
+        <div>
+          <button onClick={onDelete()}>Delete</button>
+        </div>
       </div>
     )
   }

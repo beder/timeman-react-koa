@@ -12,7 +12,15 @@ export default class User extends React.Component {
             {user.name}
           </Link>
         </h3>
-        <button onClick={onDelete()}>Delete</button>
+        <div>
+          <Link to={`/users/${user.id}/activities`}>Activities</Link>
+        </div>
+        <div>
+          <Link to={`/users`}>Users</Link>
+        </div>
+        <div>
+          <button onClick={onDelete()}>Delete</button>
+        </div>
       </div>
     )
   }
