@@ -27,7 +27,7 @@ const users = [
     'updated_at': '2016-04-20'
   },
   {
-    'id': '1',
+    'id': '4',
     'name': 'Johnnie Smith',
     'email': 'johnnie@example.com',
     'hours_per_day': '8',

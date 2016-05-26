@@ -5,8 +5,7 @@ import Main from './Main'
 
 const mapStateToProps = (state) => {
   return {
-    users: state.users,
-    activities: state.activities
+    ...state
   }
 }
 

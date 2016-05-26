@@ -4,8 +4,8 @@ import * as activitiesController from './controllers/activities_controller'
 import * as usersController from './controllers/users_controller'
 
 const routes = router()
-  .post('/activities', activitiesController.create)
-  .get('/activities', activitiesController.index)
+  .post('/users/:user_id/activities', activitiesController.create)
+  .get('/users/:user_id/activities', activitiesController.index)
   .get('/activities/:id', activitiesController.show)
   .put('/activities/:id', activitiesController.update)
   .del('/activities/:id', activitiesController._delete)

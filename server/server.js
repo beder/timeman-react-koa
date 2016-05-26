@@ -1,10 +1,12 @@
 import Koa from 'koa'
+import Kcors from 'kcors'
 
 import routes from './routes'
 
 const app = new Koa()
 
 app
+  .use(new Kcors())
   .use(routes.routes())
   .use(routes.allowedMethods())
 

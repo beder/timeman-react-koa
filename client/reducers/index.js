@@ -1,13 +1,17 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
-import users from './users'
 import activities from './activities'
+import error from './error'
+import requests from './requests'
+import users from './users'
 
 const rootReducer = combineReducers({
-  users,
   activities,
-  routing: routerReducer
+  error,
+  requests,
+  routing: routerReducer,
+  users
 })
 
 export default rootReducer

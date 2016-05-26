@@ -1,9 +1,16 @@
+import { FETCH_USERS_SUCCESS, FETCH_USER_SUCCESS } from '../actions/actionCreators'
+
 const users = (state = [], action) => {
   switch(action.type) {
-    case 'DELETE_USER':
+    case FETCH_USERS_SUCCESS:
       return [
-        ...state.slice(0, action.index),
-        ...state.slice(action.index + 1)
+        ...state.filter(oldUser => !action.users.find(newUser => newUser.id === oldUser.id)),
+        ...action.users
+      ]
+    case FETCH_USER_SUCCESS:
+      return [
+        ...state.filter(oldUser => oldUser.id !== action.user.id),
+        action.user
       ]
     default:
       return state

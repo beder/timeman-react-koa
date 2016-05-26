@@ -1,19 +1,14 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { browserHistory } from 'react-router'
+import thunk from 'redux-thunk'
 
 import rootReducer from './reducers/index'
 
-import users from './data/users'
-import activities from './data/activities'
-
-const defaultState = {
-  users,
-  activities
-}
-
-const store = createStore(rootReducer, defaultState,
-  window.devToolsExtension ? window.devToolsExtension() : undefined
+const store = createStore(rootReducer, compose(
+    applyMiddleware(thunk),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  )
 )
 
 export const history = syncHistoryWithStore(browserHistory, store)
