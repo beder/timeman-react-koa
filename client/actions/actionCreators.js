@@ -57,7 +57,7 @@ const fetchUsersFailure = (error) => {
 
 export const loadUser = (userId) => {
   return (dispatch, getState) => {
-    const user = getState().users.find(user => user.id === userId)
+    const user = getState().users.find(user => user.id.toString() === userId)
     if (user)
       return Promise.resolve()
 
@@ -115,7 +115,7 @@ const fetchUserFailure = (userId, error) => {
 
 export const loadUserActivities = (userId) => {
   return (dispatch, getState) => {
-    const activities = getState().activities.filter(activity => activity.user_id === userId)
+    const activities = getState().activities.filter(activity => activity.user_id.toString() === userId)
     if (activities.length > 0)
       return Promise.resolve()
 
@@ -173,7 +173,7 @@ const fetchUserActivitiesFailure = (userId, error) => {
 
 export const loadActivity = (id) => {
   return (dispatch, getState) => {
-    const activity = getState().activities.find(activity => activity.id === id)
+    const activity = getState().activities.find(activity => activity.id.toString() === id)
     if (activity)
       return Promise.resolve()
 
