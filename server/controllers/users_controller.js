@@ -1,21 +1,21 @@
-import users from '../data/users'
+import User from '../models/user'
 
 export const create = (ctx, next) => {
   ctx.body = 'create user'
 }
 
-export const index = (ctx, next) => {
-  ctx.body = users
+export const index = async (ctx, next) => {
+  ctx.body = await User.fetchAll()
 }
 
-export const show = (ctx, next) => {
-  ctx.body = users.find(userr => userr.id === ctx.params.id)
+export const show = async (ctx, next) => {
+  ctx.body = await User.forge({'id': ctx.params.id}).fetch()
 }
 
-export const update = (ctx, next) => {
-  ctx.body = users.find(userr => userr.id === ctx.params.id)
+export const update = async (ctx, next) => {
+  ctx.body = await User.forge({'id': ctx.params.id}).fetch()
 }
 
-export const _delete = (ctx, next) => {
-  ctx.body = users.find(userr => userr.id === ctx.params.id)
+export const _delete = async (ctx, next) => {
+  ctx.body = await User.forge({'id': ctx.params.id}).fetch()
 }

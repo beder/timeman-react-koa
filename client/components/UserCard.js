@@ -10,7 +10,7 @@ export default class UserCard extends React.Component {
   render() {
     const { users, params: { id }, deleteUser } = this.props
 
-    const i = users.findIndex((user) => user.id === id)
+    const i = users.findIndex((user) => user.id.toString() === id)
     const userComponent = (() => {
       if (i !== -1) {
         const user = users[i]

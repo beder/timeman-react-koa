@@ -9,7 +9,7 @@ export default class ActivityCard extends React.Component {
 
   render() {
     const { activities, params: { id }, deleteActivity } = this.props
-    const i = activities.findIndex((o) => o.id === id)
+    const i = activities.findIndex((activity) => activity.id.toString() === id)
 
     const activityComponent = (() => {
       if (i !== -1) {

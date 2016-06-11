@@ -12,7 +12,7 @@ export default class ActivityList extends React.Component {
 
     const activityComponents = (() => {
       if (hasFetchedActivities) {
-        return activities.filter((activity) => activity.user_id === user_id).map((activity, i) =>
+        return activities.filter((activity) => activity.user_id.toString() === user_id).map((activity, i) =>
           <Activity
             key={i}
             i={i}
