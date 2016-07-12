@@ -4,7 +4,10 @@
   "description": "## Running Locally",
   "scripts": {
     "install": "(cd server && npm install) && (cd client && npm install)",
-    "start": "(cd server && npm start) && (cd client && npm start)"
+    "start": "(cd server && npm start) && (cd client && npm start)",
+    "db:create": "cd server && npm run db:create",
+    "db:migrate": "cd server && npm run db:migrate",
+    "db:seed": "cd server && npm run db:seed"
   },
   "author": "",
   "license": "ISC"

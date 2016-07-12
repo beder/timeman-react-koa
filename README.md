@@ -1,8 +1,27 @@
 # A Node.js application
 
-## Running Locally
+## Starting the app
 
-```docker-compose up
+```
+docker-compose up
 ```
 
-Your app should now be running on [default:3000](http://default:3000/).
+The app should now be running on http://\<docker machine ip>:3000/.
+
+## Creating the database
+
+```
+docker-compose run app npm run db:create
+```
+
+## Running database migrations
+
+```
+docker-compose run app npm run db:migrate
+```
+
+## Seeding the database
+
+```
+docker-compose run app npm run db:seed
+```
