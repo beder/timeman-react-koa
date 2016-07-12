@@ -6,7 +6,7 @@
 docker-compose up
 ```
 
-The app should now be running on http://\<docker machine ip>:3000/.
+The app should now be running on http://\<docker machine ip>:3500/.
 
 ## Creating the database
 
