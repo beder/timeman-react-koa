@@ -7,6 +7,8 @@ services:
       - "3500:3500"
     volumes:
       - .:/app
+    links:
+      - postgres
   postgres:
     image: postgres:9.4
     ports:
@@ -15,6 +17,8 @@ services:
       - postgres_data
     environment:
       PGDATA : /var/lib/postgresql/data/pgdata
+    links:
+      - postgres_data
   postgres_data:
     image: postgres:9.4
     command: /bin/true

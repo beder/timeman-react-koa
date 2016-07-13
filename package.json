@@ -1,8 +1,9 @@
 {
   "name": "timeman-react-koa",
   "version": "0.1.0",
-  "description": "## Running Locally",
+  "description": "Timeman",
   "scripts": {
+    "setup": "npm install && npm run db:create && npm run db:migrate && npm run db:seed",
     "install": "(cd server && npm install) && (cd client && npm install)",
     "start": "(cd server && npm start) && (cd client && npm start)",
     "db:create": "cd server && npm run db:create",
