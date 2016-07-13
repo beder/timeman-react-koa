@@ -1,30 +1,12 @@
 # A Node.js application
 
-## Installing packages
+## Set it up
 
 ```
-docker-compose run app npm install
+docker-compose run app npm run setup
 ```
 
-## Creating the database
-
-```
-docker-compose run app npm run db:create
-```
-
-## Running database migrations
-
-```
-docker-compose run app npm run db:migrate
-```
-
-## Seeding the database
-
-```
-docker-compose run app npm run db:seed
-```
-
-## Starting the app
+## Start it
 
 ```
 docker-compose up

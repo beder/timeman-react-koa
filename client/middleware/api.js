@@ -1,6 +1,8 @@
 import fecth from 'isomorphic-fetch'
 
-const API_ROOT = 'http://timeman.docker:3000'
+const hostname = window.location.hostname
+
+const API_ROOT = 'http://' + hostname + ':3000'
 
 export const fetchUsers = () => {
   const fullUrl = API_ROOT + '/users'
