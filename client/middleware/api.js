@@ -1,25 +1,21 @@
 import fecth from 'isomorphic-fetch'
 
-const hostname = window.location.hostname
+const { protocol, hostname } = window.location
 
-const API_ROOT = 'http://' + hostname + ':3000'
+const API_ROOT = `${protocol}//${hostname}:3000`
 
 export const fetchUsers = () => {
-  const fullUrl = API_ROOT + '/users'
-  return fetch(fullUrl)
+  return fetch(`${API_ROOT}/users`)
 }
 
 export const fetchUser = (id) => {
-  const fullUrl = API_ROOT + '/users/' + id
-  return fetch(fullUrl)
+  return fetch(`${API_ROOT}/users/${id}`)
 }
 
 export const fetchUserActivities = (userId) => {
-  const fullUrl = API_ROOT + '/users/' + userId + '/activities'
-  return fetch(fullUrl)
+  return fetch(`${API_ROOT}/users/${userId}/activities`)
 }
 
 export const fetchActivity = (id) => {
-  const fullUrl = API_ROOT + '/activities/' + id
-  return fetch(fullUrl)
+  return fetch(`${API_ROOT}/activities/${id}`)
 }
