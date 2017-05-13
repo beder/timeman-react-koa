@@ -1,4 +1,4 @@
-FROM node:5
+FROM node:7.10.0
 
 # Install apt based dependencies required to run the app.
 # As the app image itself is based on a Debian image, we
